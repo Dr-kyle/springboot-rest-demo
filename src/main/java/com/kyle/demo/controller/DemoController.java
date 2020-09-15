@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/demo")
 public class DemoController {
     @GetMapping("/get")
-    public Result getTest() {
+    public Result<JSONObject> getTest() {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("name","kyle");
         jsonObject.put("age", 7);
@@ -26,7 +26,7 @@ public class DemoController {
     }
 
     @GetMapping("/error/{id}")
-    public Result getError(@PathVariable Integer id) {
+    public Result<JSONObject> getError(@PathVariable Integer id) {
         if (null == id || id < 2) {
             throw new ServiceException("test error");
         }
@@ -37,7 +37,7 @@ public class DemoController {
     }
 
     @GetMapping("/error")
-    public Result getError1(@RequestParam Integer id) {
+    public Result<JSONObject> getError1(@RequestParam Integer id) {
         if (null == id || id < 2) {
             throw new ServiceException("test error");
         }

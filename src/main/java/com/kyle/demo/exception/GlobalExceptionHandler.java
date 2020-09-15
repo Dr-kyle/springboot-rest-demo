@@ -13,12 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler(value = ServiceException.class)
-    public Result GlobalExceptionHandler(HttpServletRequest request, ServiceException e) {
+    public <T> Result<T> globalExceptionHandler(HttpServletRequest request, ServiceException e) {
         return ResultGenerator.genFailResult(e.getMessage());
     }
 
     @ExceptionHandler(value = Exception.class)
-    public Result GlobalExceptionHandler(HttpServletRequest request, Exception e) {
+    public <T> Result<T> globalExceptionHandler(HttpServletRequest request, Exception e) {
         return ResultGenerator.genFailResult(e.getMessage());
     }
 }

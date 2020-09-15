@@ -21,7 +21,7 @@ public class Result<T> {
         return code;
     }
 
-    public Result setCode(ResultCode code) {
+    public Result<T> setCode(ResultCode code) {
         this.code = code.code();
         return this;
     }
@@ -30,7 +30,7 @@ public class Result<T> {
         return message;
     }
 
-    public Result setMessage(String message) {
+    public Result<T> setMessage(String message) {
         this.message = message;
         return this;
     }
@@ -39,7 +39,7 @@ public class Result<T> {
         return data;
     }
 
-    public Result setData(T data) {
+    public Result<T> setData(T data) {
         this.data = data;
         return this;
     }
