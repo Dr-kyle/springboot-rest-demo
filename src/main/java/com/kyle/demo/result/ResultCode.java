@@ -7,7 +7,7 @@ public enum ResultCode {
     // success
     SUCCESS(200),
     // data format error
-    FAIL(400),
+    FAIL(500),
     UNAUTHORIZED(401),
     NOT_FOUND(404),
     // server error

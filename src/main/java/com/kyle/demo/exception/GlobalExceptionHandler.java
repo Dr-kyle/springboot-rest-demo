@@ -21,4 +21,5 @@ public class GlobalExceptionHandler {
     public <T> Result<T> globalExceptionHandler(HttpServletRequest request, Exception e) {
         return ResultGenerator.genFailResult(e.getMessage());
     }
+
 }

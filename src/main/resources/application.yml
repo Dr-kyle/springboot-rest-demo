@@ -1,0 +1,7 @@
+server:
+  port: 8090
+
+auth:
+  clientId: x
+  clientSecret: x
+  redirectUri: http://localhost:8082/thirdLogin/callback/newegg
