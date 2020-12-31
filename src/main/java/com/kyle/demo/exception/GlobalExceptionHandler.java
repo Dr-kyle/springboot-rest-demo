@@ -17,9 +17,17 @@ public class GlobalExceptionHandler {
         return ResultGenerator.genFailResult(e.getMessage());
     }
 
+    @ExceptionHandler(value = OauthException.class)
+    public <T> Result<T> globalExceptionHandler(HttpServletRequest request, OauthException e) {
+        return ResultGenerator.genUnauthorizedResult(e.getMessage());
+    }
+
     @ExceptionHandler(value = Exception.class)
     public <T> Result<T> globalExceptionHandler(HttpServletRequest request, Exception e) {
         return ResultGenerator.genFailResult(e.getMessage());
     }
+
+
+
 
 }

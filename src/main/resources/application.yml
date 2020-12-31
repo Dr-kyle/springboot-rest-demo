@@ -2,6 +2,11 @@ server:
   port: 8090
 
 auth:
-  clientId: x
-  clientSecret: x
-  redirectUri: http://localhost:8082/thirdLogin/callback/newegg
+  clientId: 0kyujai0xnr6j2whp985ezd9q3
+  clientSecret: 1832uiq43jan92lr05xnyxovki2d9tosblj0b7o2a3yspajjqpjr
+  redirectUri: http://localhost:8082/thirdLogin/callback/myauth
+
+audience:
+  secret: hhh
+  issuer: kyle.k.zhao
+  expires-second: 86400

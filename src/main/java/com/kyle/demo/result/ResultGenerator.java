@@ -17,4 +17,8 @@ public class ResultGenerator {
     public static <T> Result<T> genFailResult(String message) {
         return new Result<T>().setCode(ResultCode.FAIL).setMessage(message);
     }
+
+    public static <T> Result<T> genUnauthorizedResult(String message) {
+        return new Result<T>().setCode(ResultCode.UNAUTHORIZED).setMessage(message);
+    }
 }

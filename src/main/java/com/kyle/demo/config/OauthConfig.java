@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 // @Configuration
 @ConfigurationProperties(prefix = "auth")
-public class AuthConfig {
+public class OauthConfig {
     private String clientId;
     private String clientSecret;
     private String redirectUri;
