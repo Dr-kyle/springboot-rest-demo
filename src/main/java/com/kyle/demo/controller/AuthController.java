@@ -7,6 +7,8 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.kyle.demo.annotation.JwtIgnore;
 import com.kyle.demo.auth.AuthCustomRequest;
 import com.kyle.demo.config.OauthConfig;
+import com.kyle.demo.result.Result;
+import com.kyle.demo.result.ResultGenerator;
 import com.xkcoding.http.config.HttpConfig;
 import me.zhyd.oauth.config.AuthConfig;
 import me.zhyd.oauth.enums.scope.*;
@@ -65,11 +67,10 @@ public class AuthController {
 
     @JwtIgnore
     @RequestMapping("/render/{source}")
-    @ResponseBody
-    public String renderAuth(@PathVariable("source") String source, HttpServletResponse response) throws IOException {
+    public Result<String> renderAuth(@PathVariable("source") String source, HttpServletResponse response) throws IOException {
         AuthRequest authRequest = getAuthRequest(source);
         String authorizeUrl = authRequest.authorize(AuthStateUtils.createState());
-        return authorizeUrl;
+        return ResultGenerator.genSuccessResult(authorizeUrl);
         //response.sendRedirect(authorizeUrl);
     }
 
@@ -79,7 +80,6 @@ public class AuthController {
     @JwtIgnore
     @RequestMapping("/callback/{source}")
     public AuthUser login(@PathVariable("source") String source, AuthCallback callback, HttpServletRequest request) {
-        // log.info("进入callback：" + source + " callback params：" + JSONObject.toJSONString(callback));
         AuthRequest authRequest = getAuthRequest(source);
         AuthResponse<AuthUser> response = authRequest.login(callback);
         AuthUser authUser = response.getData();
