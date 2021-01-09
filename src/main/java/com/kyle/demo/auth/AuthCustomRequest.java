@@ -41,12 +41,11 @@ public class AuthCustomRequest extends AuthDefaultRequest {
         JSONObject object = JSONObject.parseObject(response);
         this.checkResponse(object.containsKey("error"), object.getString("error_description"));
         return AuthUser.builder()
-                .uuid(object.getString("sub"))
+                .uuid(object.getJSONObject("ext_info").getString("short_name"))
                 .username(object.getString("name"))
                 .avatar(object.getString("picture"))
                 .nickname(object.getString("nickname"))
                 .email(object.getString("email"))
-                .remark(object.toString())
                 .token(authToken)
                 .rawUserInfo(object)
                 .source(this.source.toString())

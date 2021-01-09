@@ -56,4 +56,10 @@ public class JwtUtil {
         DecodedJWT jwt = parseToken(token, secret, issuer);
         return jwt.getClaim("shortname").asString();
     }
+
+    public static void main(String[] args) {
+        System.out.println(createToken("email", "kyle", "admin", "kz37", "kyle", "haha"));
+        System.out.println(createToken("email", "kyle", "admin", "kz37", "kyle", "haha"));
+
+    }
 }

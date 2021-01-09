@@ -12,17 +12,17 @@ public enum AuthCustomSource implements AuthSource {
     MYAUTH {
         @Override
         public String authorize() {
-            return "";
+            return "https://nas.newegg.org/oauth2/v1/authorize";
         }
 
         @Override
         public String accessToken() {
-            return "";
+            return "https://nas.newegg.org/oauth2/v1/token";
         }
 
         @Override
         public String userInfo() {
-            return "";
+            return "https://nas.newegg.org/oauth2/v1/user-info";
         }
     }
 }

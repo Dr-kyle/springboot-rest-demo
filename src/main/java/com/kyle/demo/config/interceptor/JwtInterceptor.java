@@ -3,6 +3,8 @@ package com.kyle.demo.config.interceptor;
 import com.kyle.demo.Util.JwtUtil;
 import com.kyle.demo.annotation.JwtIgnore;
 import com.kyle.demo.config.Audience;
+import com.kyle.demo.constant.Constants;
+import com.kyle.demo.entity.UserInfo;
 import com.kyle.demo.exception.OauthException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
@@ -31,17 +33,19 @@ public class JwtInterceptor extends HandlerInterceptorAdapter {
             }
         }
         if (HttpMethod.OPTIONS.name().equals(request.getMethod())) {
-            response.setStatus(HttpServletResponse.SC_OK);
+            // response.setStatus(HttpServletResponse.SC_OK);
             return true;
         }
 
         final String authHeader = request.getHeader(JwtUtil.AUTH_HEADER_KEY);
         if (StringUtils.isEmpty(authHeader) || !authHeader.startsWith(JwtUtil.TOKEN_PREFIX)) {
-            throw new OauthException("unauthorized");
+            throw new OauthException("invalid token!");
         }
 
         final String token = authHeader.substring(7);
         JwtUtil.parseToken(token, audience.getSecret(), audience.getIssuer());
+        UserInfo userInfo = new UserInfo();
+        request.setAttribute(Constants.CURRENT_USER, userInfo);
         return true;
     }
 }
