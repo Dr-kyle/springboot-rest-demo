@@ -5,19 +5,13 @@ package com.kyle.demo.entity;
  * @author kz37
  */
 public class UserInfo {
-    private Long id;
     private String name;
-    private String realName;
 
     private String email;
 
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public UserInfo(String name, String email) {
+        this.name = name;
+        this.email = email;
     }
 
     public String getName() {
@@ -26,14 +20,6 @@ public class UserInfo {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getRealName() {
-        return realName;
-    }
-
-    public void setRealName(String realName) {
-        this.realName = realName;
     }
 
     public String getEmail() {

@@ -4,6 +4,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.kyle.demo.entity.UserInfo;
 import com.kyle.demo.exception.OauthException;
 
 /**
@@ -35,6 +36,11 @@ public class JwtUtil {
             throw new OauthException("token is invalid");
         }
 
+    }
+
+    public static UserInfo getUserInfo(String token, String secret, String issuer) {
+        DecodedJWT jwt = parseToken(token, secret, issuer);
+        return new UserInfo(jwt.getClaim("username").asString(), jwt.getSubject());
     }
 
     public static String getEmail(String token, String secret, String issuer) {

@@ -43,8 +43,8 @@ public class JwtInterceptor extends HandlerInterceptorAdapter {
         }
 
         final String token = authHeader.substring(7);
-        JwtUtil.parseToken(token, audience.getSecret(), audience.getIssuer());
-        UserInfo userInfo = new UserInfo();
+        // JwtUtil.parseToken(token, audience.getSecret(), audience.getIssuer());
+        UserInfo userInfo = JwtUtil.getUserInfo(token, audience.getSecret(), audience.getIssuer());
         request.setAttribute(Constants.CURRENT_USER, userInfo);
         return true;
     }
