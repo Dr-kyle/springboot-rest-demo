@@ -47,7 +47,7 @@ public class GlobalResponseConfig implements ResponseBodyAdvice<Object> {
             } else if (o instanceof String) {
                 Result<Object> result = ResultGenerator.genSuccessResult(o);
                 try {
-                    return JsonUtil.objectMapper.writeValueAsString(result);
+                    return JsonUtil.objectMapperCustom.writeValueAsString(result);
                 } catch (JsonProcessingException e) {
                     return o;
                 }

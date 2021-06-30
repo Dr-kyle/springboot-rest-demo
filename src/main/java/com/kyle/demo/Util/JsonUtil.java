@@ -8,5 +8,5 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public final class JsonUtil {
     private JsonUtil() {}
 
-    public static final ObjectMapper objectMapper = new ObjectMapper();
+    public static final ObjectMapper objectMapperCustom = new ObjectMapper();
 }

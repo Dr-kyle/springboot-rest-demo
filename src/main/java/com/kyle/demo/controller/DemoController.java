@@ -1,12 +1,9 @@
 package com.kyle.demo.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.kyle.demo.exception.ServiceException;
 import com.kyle.demo.result.Result;
 import com.kyle.demo.result.ResultGenerator;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.HandlerMapping;
@@ -20,8 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/demo")
 public class DemoController {
 
-    @Autowired
-    ObjectMapper objectMapper;
+//    @Autowired
+//    ObjectMapper objectMapper;
 
     @GetMapping("/get")
     public Result<JSONObject> getTest() {
@@ -107,12 +104,12 @@ public class DemoController {
         return jsonObject;
     }
 
-    @GetMapping("/json")
-    public ObjectNode s() {
-        ObjectNode node = objectMapper.createObjectNode();
-        node.put("a","b");
-        System.out.println(node.getNodeType());
-        System.out.println(node.get("a").getNodeType());
-        return node;
-    }
+//    @GetMapping("/json")
+//    public ObjectNode s() {
+//        ObjectNode node = objectMapper.createObjectNode();
+//        node.put("a","b");
+//        System.out.println(node.getNodeType());
+//        System.out.println(node.get("a").getNodeType());
+//        return node;
+//    }
 }
