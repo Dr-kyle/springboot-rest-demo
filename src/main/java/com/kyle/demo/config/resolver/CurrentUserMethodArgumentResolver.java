@@ -1,5 +1,6 @@
 package com.kyle.demo.config.resolver;
 
+import com.alibaba.fastjson.JSONObject;
 import com.kyle.demo.annotation.CurrentUser;
 import com.kyle.demo.constant.Constants;
 import com.kyle.demo.entity.UserInfo;
@@ -11,14 +12,29 @@ import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 import org.springframework.web.multipart.support.MissingServletRequestPartException;
 
+import java.lang.reflect.Method;
+
 /**
  * @author kz37
  */
 public class CurrentUserMethodArgumentResolver implements HandlerMethodArgumentResolver {
     @Override
     public boolean supportsParameter(MethodParameter methodParameter) {
-        return methodParameter.getParameterType().isAssignableFrom(UserInfo.class)
-                && methodParameter.hasParameterAnnotation(CurrentUser.class);
+
+        final Method method = methodParameter.getMethod();
+        final Class<?> clazz = methodParameter.getMethod().getDeclaringClass();
+        boolean hasParameterAnnotation = methodParameter.hasParameterAnnotation(CurrentUser.class);
+        // isAnnotationPresent Returns true if an annotation for the specified type is present on this element
+        boolean isHasLoginAuth = clazz.isAnnotationPresent(CurrentUser.class) || method.isAnnotationPresent(CurrentUser.class) || hasParameterAnnotation;
+        // isAssignableFrom
+        boolean isHasLoginUserParameter = methodParameter.getParameterType().isAssignableFrom(UserInfo.class);
+
+        return isHasLoginAuth && isHasLoginUserParameter;
+
+
+//        boolean result = methodParameter.getParameterType().isAssignableFrom(UserInfo.class)
+//                && methodParameter.hasParameterAnnotation(CurrentUser.class);
+//        return result;
     }
 
     @Override

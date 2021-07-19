@@ -23,7 +23,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new JwtInterceptor()).addPathPatterns("/**").excludePathPatterns("/favicon.ico");
+        registry.addInterceptor(new JwtInterceptor(audience)).addPathPatterns("/**").excludePathPatterns("/favicon.ico", "/login.html");
     }
 
     @Override

@@ -20,11 +20,15 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class JwtInterceptor extends HandlerInterceptorAdapter {
 
-    @Autowired
-    private Audience audience;
+    Audience audience;
+
+    public JwtInterceptor(Audience audience) {
+        this.audience = audience;
+    }
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+
         if (handler instanceof HandlerMethod) {
             HandlerMethod handlerMethod = (HandlerMethod) handler;
             JwtIgnore jwtIgnore = handlerMethod.getMethodAnnotation(JwtIgnore.class);
@@ -36,7 +40,6 @@ public class JwtInterceptor extends HandlerInterceptorAdapter {
             // response.setStatus(HttpServletResponse.SC_OK);
             return true;
         }
-
         final String authHeader = request.getHeader(JwtUtil.AUTH_HEADER_KEY);
         if (StringUtils.isEmpty(authHeader) || !authHeader.startsWith(JwtUtil.TOKEN_PREFIX)) {
             throw new OauthException("invalid token!");

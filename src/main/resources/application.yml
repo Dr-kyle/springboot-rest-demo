@@ -1,12 +1,29 @@
 server:
   port: 8090
-
+# gitte
 auth:
-  clientId: 0kyujai0xnr6j2whp985ezd9q3
-  clientSecret: 1832uiq43jan92lr05xnyxovki2d9tosblj0b7o2a3yspajjqpjr
-  redirectUri: http://localhost:8082/thirdLogin/callback/myauth
+  clientId: a53d9d98adbf266588e92280382a175255a3df3ec350c6a120d4150dc4b467e6
+  clientSecret: 324165ba5bba436e3fcadd5371a570bf7d081ab24b5d012b348fdcffa13506c8
+  redirectUri: http://localhost:8090/api/thirdLogin/gitee/callback
 
 audience:
   secret: hhh
   issuer: kyle.k.zhao
   expires-second: 86400
+#spring:
+#  freemarker:
+##    # 设置模板后缀名
+#    suffix: .ftl
+##    # 设置文档类型
+#    content-type: text/html
+##    # 设置页面编码格式
+#    charset: UTF-8
+##    # 设置页面缓存
+#    cache: false
+#    prefer-file-system-access: false
+##    # 设置ftl文件路径
+#    template-loader-path:
+#      - classpath:/templates
+#  # 设置静态文件路径，js,css等
+#  mvc:
+#    static-path-pattern: /**

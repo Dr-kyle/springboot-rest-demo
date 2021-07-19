@@ -24,7 +24,7 @@ public class JwtUtil {
                 .withClaim("role", role)
                 .withClaim("shortname", shortName)
                 .sign(algorithm);
-        return token;
+        return TOKEN_PREFIX + token;
     }
 
     public static DecodedJWT parseToken(String token, String secret, String issuer) {

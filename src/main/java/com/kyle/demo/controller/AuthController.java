@@ -15,6 +15,7 @@ import me.zhyd.oauth.enums.scope.*;
 import me.zhyd.oauth.exception.AuthException;
 import me.zhyd.oauth.model.AuthCallback;
 import me.zhyd.oauth.model.AuthResponse;
+import me.zhyd.oauth.model.AuthToken;
 import me.zhyd.oauth.model.AuthUser;
 import me.zhyd.oauth.request.*;
 import me.zhyd.oauth.utils.AuthScopeUtils;
@@ -100,6 +101,13 @@ public class AuthController {
 //        return new ModelAndView("error", map);
     }
 
+    @JwtIgnore
+    @RequestMapping("/refresh/{source}")
+    public Object refreshAuth(@PathVariable("source") String source, String token){
+        AuthRequest authRequest = getAuthRequest(source);
+        return authRequest.refresh(AuthToken.builder().refreshToken(token).build());
+    }
+
 
     /**
      * 根据具体的授权来源，获取授权请求工具类
@@ -141,7 +149,7 @@ public class AuthController {
                         // 针对国外平台配置代理
 //                        .httpConfig(HttpConfig.builder()
 //                                .timeout(15000)
-//                                .proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 10080)))
+//                                .proxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress("ls2.cngrok.com", 443)))
 //                                .build())
                         .build());
                 break;
@@ -150,7 +158,8 @@ public class AuthController {
                         .clientId(oauthConfig.getClientId())
                         .clientSecret(oauthConfig.getClientSecret())
                         .redirectUri(oauthConfig.getRedirectUri())
-                        .scopes(AuthScopeUtils.getScopes(AuthGiteeScope.values()))
+//                        .scopes(AuthScopeUtils.getScopes(AuthGiteeScope.values()))
+                        .scopes(AuthScopeUtils.getScopes(AuthGiteeScope.USER_INFO))
                         .build());
                 break;
             case "weibo":

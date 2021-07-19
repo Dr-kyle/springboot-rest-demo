@@ -6,8 +6,8 @@ import org.springframework.stereotype.Component;
 /**
  * @author kz37
  */
-@ConfigurationProperties(prefix = "audience")
 @Component
+@ConfigurationProperties(prefix = "audience")
 public class Audience {
     private String secret;
     private String issuer;

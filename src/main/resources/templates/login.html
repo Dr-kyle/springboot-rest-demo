@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>第三方登录</title>
+</head>
+<body>
+登陆中111...
+</body>
+<script th:inline="javascript">
+    window.onload = function () {
+        setTimeout(function (){
+            var thirdLoginInfo = [[${token}]];
+            window.opener.postMessage(thirdLoginInfo, "*");
+            window.close();
+        },1000)
+    }
+</script>
+</html>
