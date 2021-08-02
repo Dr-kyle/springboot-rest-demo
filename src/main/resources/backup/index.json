@@ -1,0 +1,381 @@
+{
+  "shards": [
+    {
+      ".ds-my-data-stream-000001": [
+        {
+          "recovery_source": {
+            "type": "PEER"
+          },
+          "unassigned_info": {
+            "reason": "CLUSTER_RECOVERED",
+            "at": "2021-07-31T11:03:55.837Z",
+            "allocation_status": "no_attempt",
+            "delayed": false
+          },
+          "index": ".ds-my-data-stream-000001",
+          "state": "UNASSIGNED",
+          "shard": 0,
+          "primary": false
+        }
+      ],
+      "test": [
+        {
+          "recovery_source": {
+            "type": "PEER"
+          },
+          "unassigned_info": {
+            "reason": "CLUSTER_RECOVERED",
+            "at": "2021-07-31T11:03:55.837Z",
+            "allocation_status": "no_attempt",
+            "delayed": false
+          },
+          "index": "test",
+          "state": "UNASSIGNED",
+          "shard": 0,
+          "primary": false
+        }
+      ],
+      "kyle": [
+        {
+          "recovery_source": {
+            "type": "PEER"
+          },
+          "unassigned_info": {
+            "reason": "CLUSTER_RECOVERED",
+            "at": "2021-07-31T11:03:55.837Z",
+            "allocation_status": "no_attempt",
+            "delayed": false
+          },
+          "index": "kyle",
+          "state": "UNASSIGNED",
+          "shard": 0,
+          "primary": false
+        }
+      ],
+      "kyle1": [
+        {
+          "recovery_source": {
+            "type": "PEER"
+          },
+          "unassigned_info": {
+            "reason": "CLUSTER_RECOVERED",
+            "at": "2021-07-31T11:03:55.837Z",
+            "allocation_status": "no_attempt",
+            "delayed": false
+          },
+          "index": "kyle1",
+          "state": "UNASSIGNED",
+          "shard": 0,
+          "primary": false
+        }
+      ],
+      ".ds-my-data-stream-2021.05.13-000001": [
+        {
+          "recovery_source": {
+            "type": "PEER"
+          },
+          "unassigned_info": {
+            "reason": "CLUSTER_RECOVERED",
+            "at": "2021-07-31T11:03:55.837Z",
+            "allocation_status": "no_attempt",
+            "delayed": false
+          },
+          "index": ".ds-my-data-stream-2021.05.13-000001",
+          "state": "UNASSIGNED",
+          "shard": 0,
+          "primary": false
+        }
+      ],
+      ".ds-my-data-stream-2021.05.13-000002": [
+        {
+          "recovery_source": {
+            "type": "PEER"
+          },
+          "unassigned_info": {
+            "reason": "CLUSTER_RECOVERED",
+            "at": "2021-07-31T11:03:55.837Z",
+            "allocation_status": "no_attempt",
+            "delayed": false
+          },
+          "index": ".ds-my-data-stream-2021.05.13-000002",
+          "state": "UNASSIGNED",
+          "shard": 0,
+          "primary": false
+        }
+      ]
+    },
+    {
+      ".kibana_7.12.1_001": [
+        {
+          "node": "dT1a6QdIQ3yPUbiCbBvGyQ",
+          "allocation_id": {
+            "id": "hhjTcfXxTym8Zhr8ezV8rg"
+          },
+          "index": ".kibana_7.12.1_001",
+          "state": "STARTED",
+          "shard": 0,
+          "primary": true
+        }
+      ],
+      "test": [
+        {
+          "node": "dT1a6QdIQ3yPUbiCbBvGyQ",
+          "allocation_id": {
+            "id": "lGj5mv8ATjqp4GXUYFlbSA"
+          },
+          "index": "test",
+          "state": "STARTED",
+          "shard": 0,
+          "primary": true
+        }
+      ],
+      ".apm-agent-configuration": [
+        {
+          "node": "dT1a6QdIQ3yPUbiCbBvGyQ",
+          "allocation_id": {
+            "id": "o7boBiF2Rq2_Ux51g8tT0A"
+          },
+          "index": ".apm-agent-configuration",
+          "state": "STARTED",
+          "shard": 0,
+          "primary": true
+        }
+      ],
+      ".kibana_task_manager_7.12.1_001": [
+        {
+          "node": "dT1a6QdIQ3yPUbiCbBvGyQ",
+          "allocation_id": {
+            "id": "8tiAGUynRbyF5v9n3guuTQ"
+          },
+          "index": ".kibana_task_manager_7.12.1_001",
+          "state": "STARTED",
+          "shard": 0,
+          "primary": true
+        }
+      ],
+      ".kibana-event-log-7.12.1-000001": [
+        {
+          "node": "dT1a6QdIQ3yPUbiCbBvGyQ",
+          "allocation_id": {
+            "id": "qGoNsm1PQ0-JhBHgTFqrYw"
+          },
+          "index": ".kibana-event-log-7.12.1-000001",
+          "state": "STARTED",
+          "shard": 0,
+          "primary": true
+        }
+      ],
+      ".tasks": [
+        {
+          "node": "dT1a6QdIQ3yPUbiCbBvGyQ",
+          "allocation_id": {
+            "id": "gWTYMyYnRJemzDXfchHDeg"
+          },
+          "index": ".tasks",
+          "state": "STARTED",
+          "shard": 0,
+          "primary": true
+        }
+      ],
+      "_node": {
+        "jvm": {
+          "using_bundled_jdk": true,
+          "vm_vendor": "AdoptOpenJDK",
+          "using_compressed_ordinary_object_pointers": "true",
+          "pid": 10892,
+          "version": "16",
+          "vm_version": "16+36",
+          "mem": {
+            "heap_init_in_bytes": 4248829952,
+            "non_heap_max_in_bytes": 0,
+            "heap_max_in_bytes": 4248829952,
+            "non_heap_init_in_bytes": 7667712,
+            "direct_max_in_bytes": 0
+          },
+          "bundled_jdk": true,
+          "gc_collectors": [
+            "G1 Young Generation",
+            "G1 Old Generation"
+          ],
+          "start_time_in_millis": 1627729419198,
+          "memory_pools": [
+            "CodeHeap 'non-nmethods'",
+            "Metaspace",
+            "CodeHeap 'profiled nmethods'",
+            "Compressed Class Space",
+            "G1 Eden Space",
+            "G1 Old Gen",
+            "G1 Survivor Space",
+            "CodeHeap 'non-profiled nmethods'"
+          ],
+          "input_arguments": [
+            "-Des.networkaddress.cache.ttl=60",
+            "-Des.networkaddress.cache.negative.ttl=10",
+            "-XX:+AlwaysPreTouch",
+            "-Xss1m",
+            "-Djava.awt.headless=true",
+            "-Dfile.encoding=UTF-8",
+            "-Djna.nosys=true",
+            "-XX:-OmitStackTraceInFastThrow",
+            "-XX:+ShowCodeDetailsInExceptionMessages",
+            "-Dio.netty.noUnsafe=true",
+            "-Dio.netty.noKeySetOptimization=true",
+            "-Dio.netty.recycler.maxCapacityPerThread=0",
+            "-Dio.netty.allocator.numDirectArenas=0",
+            "-Dlog4j.shutdownHookEnabled=false",
+            "-Dlog4j2.disable.jmx=true",
+            "-Djava.locale.providers=SPI,COMPAT",
+            "--add-opens=java.base/java.io=ALL-UNNAMED",
+            "-XX:+UseG1GC",
+            "-Djava.io.tmpdir=C:\\Users\\kyle\\AppData\\Local\\Temp\\elasticsearch",
+            "-XX:+HeapDumpOnOutOfMemoryError",
+            "-XX:HeapDumpPath=data",
+            "-XX:ErrorFile=logs/hs_err_pid%p.log",
+            "-Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m",
+            "-Xms4052m",
+            "-Xmx4052m",
+            "-XX:MaxDirectMemorySize=2124414976",
+            "-XX:G1HeapRegionSize=4m",
+            "-XX:InitiatingHeapOccupancyPercent=30",
+            "-XX:G1ReservePercent=15",
+            "-Delasticsearch",
+            "-Des.path.home=E:\\dev-software\\elasticsearch-7.12.1",
+            "-Des.path.conf=E:\\dev-software\\elasticsearch-7.12.1\\config",
+            "-Des.distribution.flavor=default",
+            "-Des.distribution.type=zip",
+            "-Des.bundled_jdk=true"
+          ],
+          "vm_name": "OpenJDK 64-Bit Server VM"
+        },
+        "transport_address": "127.0.0.1:9300",
+        "ip": "127.0.0.1",
+        "build_flavor": "default",
+        "roles": [
+          "data",
+          "data_cold",
+          "data_content",
+          "data_frozen",
+          "data_hot",
+          "data_warm",
+          "ingest",
+          "master",
+          "ml",
+          "remote_cluster_client",
+          "transform"
+        ],
+        "name": "DESKTOP-N5TMIF6",
+        "host": "127.0.0.1",
+        "attributes": {
+          "ml.machine_memory": "8497946624",
+          "xpack.installed": "true",
+          "transform.node": "true",
+          "ml.max_open_jobs": "20",
+          "ml.max_jvm_size": "4248829952"
+        },
+        "version": "7.12.1",
+        "build_type": "zip",
+        "build_hash": "3186837139b9c6b6d23c3200870651f10d3343b7"
+      },
+      ".ds-my-data-stream-000001": [
+        {
+          "node": "dT1a6QdIQ3yPUbiCbBvGyQ",
+          "allocation_id": {
+            "id": "t_kJYv9tTg6dJgMY3nVg2A"
+          },
+          "index": ".ds-my-data-stream-000001",
+          "state": "STARTED",
+          "shard": 0,
+          "primary": true
+        }
+      ],
+      ".apm-custom-link": [
+        {
+          "node": "dT1a6QdIQ3yPUbiCbBvGyQ",
+          "allocation_id": {
+            "id": "-1PUJZXXT_ukgy5CP3N4Tg"
+          },
+          "index": ".apm-custom-link",
+          "state": "STARTED",
+          "shard": 0,
+          "primary": true
+        }
+      ],
+      "kyle": [
+        {
+          "node": "dT1a6QdIQ3yPUbiCbBvGyQ",
+          "allocation_id": {
+            "id": "rJkC48zRQYSVShE5QWa5wQ"
+          },
+          "index": "kyle",
+          "state": "STARTED",
+          "shard": 0,
+          "primary": true
+        }
+      ],
+      "kyle1": [
+        {
+          "node": "dT1a6QdIQ3yPUbiCbBvGyQ",
+          "allocation_id": {
+            "id": "TI6t_mkYScukRxsrEJOLag"
+          },
+          "index": "kyle1",
+          "state": "STARTED",
+          "shard": 0,
+          "primary": true
+        }
+      ],
+      ".ds-my-data-stream-2021.05.13-000001": [
+        {
+          "node": "dT1a6QdIQ3yPUbiCbBvGyQ",
+          "allocation_id": {
+            "id": "bAGlkaXtRgayeBrbOQ6j2g"
+          },
+          "index": ".ds-my-data-stream-2021.05.13-000001",
+          "state": "STARTED",
+          "shard": 0,
+          "primary": true
+        }
+      ],
+      ".ds-my-data-stream-2021.05.13-000002": [
+        {
+          "node": "dT1a6QdIQ3yPUbiCbBvGyQ",
+          "allocation_id": {
+            "id": "SjEUJcHdT2mepMW4JQkxiQ"
+          },
+          "index": ".ds-my-data-stream-2021.05.13-000002",
+          "state": "STARTED",
+          "shard": 0,
+          "primary": true
+        }
+      ],
+      ".ds-ilm-history-5-2021.05.10-000001": [
+        {
+          "node": "dT1a6QdIQ3yPUbiCbBvGyQ",
+          "allocation_id": {
+            "id": "ekD2YlnYSFyyO0N3iRmmfg"
+          },
+          "index": ".ds-ilm-history-5-2021.05.10-000001",
+          "state": "STARTED",
+          "shard": 0,
+          "primary": true
+        }
+      ]
+    }
+    
+  ],
+  "columns": [
+    ".apm-agent-configuration",
+    ".apm-custom-link",
+    ".ds-ilm-history-5-2021.05.10-000001",
+    ".ds-my-data-stream-000001",
+    ".ds-my-data-stream-2021.05.13-000001",
+    ".ds-my-data-stream-2021.05.13-000002",
+    ".kibana-event-log-7.12.1-000001",
+    ".kibana_7.12.1_001",
+    ".kibana_task_manager_7.12.1_001",
+    ".tasks",
+    "kyle",
+    "kyle1",
+    "test"
+  ]
+}

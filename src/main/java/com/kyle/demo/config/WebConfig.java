@@ -21,10 +21,10 @@ public class WebConfig implements WebMvcConfigurer {
     @Autowired
     Audience audience;
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new JwtInterceptor(audience)).addPathPatterns("/**").excludePathPatterns("/favicon.ico", "/login.html");
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(new JwtInterceptor(audience)).addPathPatterns("/**").excludePathPatterns("/favicon.ico", "/login.html");
+//    }
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {

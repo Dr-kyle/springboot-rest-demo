@@ -10,6 +10,19 @@ audience:
   secret: hhh
   issuer: kyle.k.zhao
   expires-second: 86400
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false;MODE=MYSQL;CASE_INSENSITIVE_IDENTIFIERS=TRUE;
+    password:
+    driver-class-name: org.h2.Driver
+    username: sa
+    schema: classpath*:schema.sql
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+
 #spring:
 #  freemarker:
 ##    # 设置模板后缀名
